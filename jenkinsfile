@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                git branch: 'main', url: 'https://github.com/etichiranjeevi/nodejs_error.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+
+        stage('Deploy to EC2') {
+            steps {
+                // Copy project files to target EC2
+                sh 'scp -o StrictHostKeyChecking=no -r * ubuntu@34.207.148.68:/home/ubuntu/jen-shopping/'
+
+                // Restart app with pm2
+               sh "ssh ubuntu@34.207.148.68 'cd /home/ubuntu/jen-shopping && npm install && pm2 stop shopping-app || true && pm2 start app.js --name shopping-app'"
+
+            }
+        }
+    }
+}
