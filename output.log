@@ -1,0 +1,8 @@
+nohup: ignoring input
+
+> shopping-app@1.0.0 start
+> node app.js
+
+[BOOT] NODE_ENV=development
+[BOOT] Listening on :3000
+Killed

@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
   <title>Shopping App</title>
+  <!-- Link to CSS file -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Shopping App</h1>
-  <p>API links (will open JSON):</p>
-  <ul>
-    <li><a href="/products">/products</a> (list all)</li>
-    <li><a href="/cart">/cart</a> (view cart)</li>
-    <li><a href="/payments">/payments</a> (view payments)</li>
-  </ul>
-  <p>Try POSTs with curl:</p>
-  <pre>
-curl -X POST http://localhost:3000/cart -H "Content-Type: application/json" -d '{"productId":1,"quantity":2}'
-curl -X POST http://localhost:3000/payments -H "Content-Type: application/json" -d '{"cartId":1,"amount":2000,"method":"card"}'
-  </pre>
+  <h1>Welcome to the Shopping App</h1>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/cart">Cart</a></li>
+      <li><a href="/payments">Payments</a></li>
+    </ul>
+  </nav>
+
+  
 </body>
 </html>
 
