@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+   environment {
+       PORT=8000
+   }
+
     stages {
         stage('Clone') {
             steps {
